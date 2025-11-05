@@ -1,27 +1,29 @@
-#include<stdio.h>
-main()
+#include <stdio.h>
 
-{
-	int n,a[100],i,e=0,o=0;
-	printf("enter no. of elements in array:");
-	scanf("%d",&n);
-	printf("enter elements of array:\n");
-	for(i=1;i<=n;i++)
-{
-	scanf("%d",&a[i]);
-	}
-	for(i=1;i<=n;i++)
-	{
-		if(i%2==0)
-		{
-			e=e+a[i];
-		}
-		else
-		{
-			o=o+a[i];
-		}
-	}
-	printf("the sum of even index elements is %d\n",e);
-	printf("the sum of odd index elements is %d\n",o);
-	
+int main() {
+    int n;
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+
+    int arr[n];
+    for(int i = 0; i < n; i++) {
+        printf("Enter element %d: ", i+1);
+        scanf("%d", &arr[i]);
+    }
+
+    int sumOddPos = 0;     
+    int sumEvenPos = 0;    
+
+    for(int i = 0; i < n; i++) {
+        if ((i+1) % 2 == 1) {       
+            sumOddPos += arr[i];
+        } else {                    
+            sumEvenPos += arr[i];
+        }
+    }
+
+    printf("Sum of elements at odd positions = %d\n", sumOddPos);
+    printf("Sum of elements at even positions = %d\n", sumEvenPos);
+
+    return 0;
 }
